@@ -16,25 +16,14 @@ class RecordSoundsController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet var recordingLabel: UILabel!
     
     var audioRecorder: AVAudioRecorder!
-    let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)[0] as String
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.performSegueWithIdentifier("audioSegue", sender: NSURL(string: "file:///Users/mauricio/Library/Developer/CoreSimulator/Devices/5A054DC3-A4E0-47F0-8AB1-984D9D7D6A9E/data/Containers/Data/Application/6514A267-5118-4583-B29D-EC941E005726/Documents/recordedVoice.wav"))
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    // Removed viewDidAppear and others empty methods totally useless in this case.
     
     @IBAction func recordAudio(sender: AnyObject) {
         recording(true)
         
         let recordingName = "recordedVoice.wav"
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)[0] as String
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
         print(filePath!)

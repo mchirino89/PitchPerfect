@@ -17,13 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJM-Eh-FlE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap to record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJM-Eh-FlE">
                                 <rect key="frame" x="249" y="415" width="102.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nW-7y-iZY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nW-7y-iZY">
                                 <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <state key="normal" image="recordButton"/>
                                 <connections>
@@ -78,7 +78,7 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="z7P-jW-7Ul">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="134"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-Tb-B22" userLabel="snailButton">
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-Tb-B22" userLabel="snailButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="134"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" image="snailButton"/>
@@ -98,14 +98,14 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fxm-CY-tYQ">
                                         <rect key="frame" x="0.0" y="134" width="600" height="134"/>
                                         <subviews>
-                                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBD-CA-8mY" userLabel="chipmunkButton">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBD-CA-8mY" userLabel="chipmunkButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="134"/>
                                                 <state key="normal" image="chipmunkButton"/>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="zcq-Ua-wJK" eventType="touchUpInside" id="7nJ-QT-ne8"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwg-fp-Due" userLabel="vaderButton">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwg-fp-Due" userLabel="vaderButton">
                                                 <rect key="frame" x="300" y="0.0" width="300" height="134"/>
                                                 <state key="normal" image="vaderButton"/>
                                                 <connections>
@@ -157,6 +157,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="OuterStackView" destination="Iux-UZ-qm4" id="220-9M-fwd"/>
                         <outlet property="chipmunkButton" destination="eBD-CA-8mY" id="z6i-V4-jOL"/>
                         <outlet property="echoButton" destination="RFt-8r-atn" id="Jnf-lp-oCy"/>
                         <outlet property="rabbitButton" destination="bfx-Qb-QfD" id="PWU-d5-T4L"/>
@@ -164,6 +165,7 @@
                         <outlet property="snailButton" destination="A1c-Tb-B22" id="ikt-Aa-ZX8"/>
                         <outlet property="stopButton" destination="oAS-30-A1X" id="JfS-cc-9De"/>
                         <outlet property="vaderButton" destination="Uwg-fp-Due" id="GkG-Zx-FQI"/>
+                        <outletCollection property="innerStackView" destination="z7P-jW-7Ul" collectionClass="NSMutableArray" id="yJn-eV-JFc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUK-Yc-97o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -190,13 +192,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chipmunkButton" width="200" height="200"/>
+        <image name="chipmunkButton" width="160" height="160"/>
         <image name="echoButton" width="160" height="160"/>
-        <image name="rabitButton" width="200" height="200"/>
+        <image name="rabitButton" width="160" height="160"/>
         <image name="recordButton" width="200" height="200"/>
         <image name="reverbButton" width="160" height="160"/>
-        <image name="snailButton" width="200" height="200"/>
+        <image name="snailButton" width="160" height="160"/>
         <image name="stopRecordButton" width="100" height="100"/>
-        <image name="vaderButton" width="200" height="200"/>
+        <image name="vaderButton" width="160" height="160"/>
     </resources>
 </document>

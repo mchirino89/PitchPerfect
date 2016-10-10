@@ -14,7 +14,6 @@
 		226D07CC1DAB090600E626F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D07CB1DAB090600E626F4 /* AppDelegate.swift */; };
 		226D07CE1DAB090600E626F4 /* RecordSoundsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D07CD1DAB090600E626F4 /* RecordSoundsController.swift */; };
 		226D07D11DAB090600E626F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226D07CF1DAB090600E626F4 /* Main.storyboard */; };
-		226D07D61DAB090600E626F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226D07D41DAB090600E626F4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		226D07CB1DAB090600E626F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		226D07CD1DAB090600E626F4 /* RecordSoundsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsController.swift; sourceTree = "<group>"; };
 		226D07D01DAB090600E626F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		226D07D51DAB090600E626F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		226D07D71DAB090600E626F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +65,6 @@
 				2219F9001DAB27900052BF87 /* PlaySoundsViewController.swift */,
 				221473D11DAB4E0A000AF663 /* PlaySoundsViewController+Audio.swift */,
 				2219F9021DAB47650052BF87 /* Assets.xcassets */,
-				226D07D41DAB090600E626F4 /* LaunchScreen.storyboard */,
 				226D07D71DAB090600E626F4 /* Info.plist */,
 			);
 			path = PitchPerfect;
@@ -131,7 +128,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226D07D61DAB090600E626F4 /* LaunchScreen.storyboard in Resources */,
 				2219F9031DAB47650052BF87 /* Assets.xcassets in Resources */,
 				226D07D11DAB090600E626F4 /* Main.storyboard in Resources */,
 			);
@@ -161,14 +157,6 @@
 				226D07D01DAB090600E626F4 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		226D07D41DAB090600E626F4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				226D07D51DAB090600E626F4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

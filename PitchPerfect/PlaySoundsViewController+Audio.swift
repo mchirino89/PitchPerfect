@@ -32,6 +32,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             audioFile = try AVAudioFile(forReading: recordedAudioURL)
         } catch {
             showAlert(Alerts.AudioFileError, message: String(error))
+            setPlayButtonsEnabled(false)
         }
         print("Audio has been setup")
     }
