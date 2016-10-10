@@ -20,6 +20,7 @@ class RecordSoundsController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.performSegueWithIdentifier("audioSegue", sender: NSURL(string: "file:///Users/mauricio/Library/Developer/CoreSimulator/Devices/5A054DC3-A4E0-47F0-8AB1-984D9D7D6A9E/data/Containers/Data/Application/6514A267-5118-4583-B29D-EC941E005726/Documents/recordedVoice.wav"))
     }
     
     override func viewWillAppear(animated: Bool) {

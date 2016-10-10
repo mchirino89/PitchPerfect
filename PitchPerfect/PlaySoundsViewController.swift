@@ -26,7 +26,7 @@ class PlaySoundsViewController: UIViewController {
     var stopTimer: NSTimer!
 
     enum ButtonType: Int {
-        case Slow = 0, Fast, Chipmunk, Vader, Echo, Reverb
+        case slow = 0, fast, chipmunk, vader, echo, reverb
     }
     
     override func viewDidLoad() {
@@ -46,15 +46,15 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func playSoundForButton(sender: UIButton) {
         switch (ButtonType(rawValue: sender.tag)!) {
-            case .Slow:
+            case .slow:
                 playSound(rate: 0.5)
-            case .Fast:
+            case .fast:
                 playSound(rate: 1.5)
-            case .Chipmunk:
+            case .chipmunk:
                 playSound(pitch: 1000)
-            case .Vader:
+            case .vader:
                 playSound(pitch: -1000)
-            case .Echo:
+            case .echo:
                 playSound(echo: true)
             default:
                 playSound(reverb: true)
