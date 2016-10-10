@@ -23,7 +23,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
     
     // raw values correspond to sender tags
     enum PlayingState { case Playing, NotPlaying }
-
     
     // MARK: Audio Functions
     
@@ -109,7 +108,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         audioPlayerNode.play()
     }
     
-    
     // MARK: Connect List of Audio Nodes
     
     func connectAudioNodes(nodes: AVAudioNode...) {
@@ -136,7 +134,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         }
     }
     
-    
     // MARK: UI Functions
 
     func configureUI(playState: PlayingState) {
@@ -158,7 +155,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         echoButton.enabled = enabled
         reverbButton.enabled = enabled
     }
-
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -166,7 +162,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
-    
 }
 
 

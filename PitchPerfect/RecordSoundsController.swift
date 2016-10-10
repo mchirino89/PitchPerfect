@@ -48,10 +48,10 @@ class RecordSoundsController: UIViewController, AVAudioRecorderDelegate {
                 audioRecorder.prepareToRecord()
                 audioRecorder.record()
             } catch {
-                print("Problem recording audio")
+                showAlert("Problem recording audio")
             }
         } catch {
-            print("Trouble gettint Session category")
+            showAlert("Trouble getting Session category")
         }
     }
     
@@ -62,7 +62,7 @@ class RecordSoundsController: UIViewController, AVAudioRecorderDelegate {
         do {
             try session.setActive(true)
         } catch {
-            print("Error releasing audio resources")
+            showAlert("Error releasing audio resources")
         }
     }
     
@@ -84,7 +84,7 @@ class RecordSoundsController: UIViewController, AVAudioRecorderDelegate {
         if flag {
             self.performSegueWithIdentifier("audioSegue", sender: audioRecorder.url)
         } else {
-            print("Error saving audio")
+            showAlert("Error saving audio")
         }
     }
     
@@ -96,4 +96,3 @@ class RecordSoundsController: UIViewController, AVAudioRecorderDelegate {
         }
     }
 }
-
