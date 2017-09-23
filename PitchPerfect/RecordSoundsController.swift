@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecordSoundsController.swift
 //  PitchPerfect
 //
 //  Created by Mauricio Chirino on 29/9/16.
@@ -19,22 +19,22 @@ class RecordSoundsController: UIViewController, AVAudioRecorderDelegate {
     
     // Removed viewDidAppear and others empty methods totally useless in this case.
     
-    @IBAction func recordAudio(sender: AnyObject) {
+    @IBAction func recordAudio(_ sender: AnyObject) {
         recording(true)
         
         let recordingName = "recordedVoice.wav"
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)[0] as String
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let pathArray = [dirPath, recordingName]
-        let filePath = NSURL.fileURLWithPathComponents(pathArray)
+        let filePath = NSURL.fileURL(withPathComponents: pathArray)
         print(filePath!)
         
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
             do {
-                try audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
+                try audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
                 audioRecorder.delegate = self
-                audioRecorder.meteringEnabled = true
+                audioRecorder.isMeteringEnabled = true
                 audioRecorder.prepareToRecord()
                 audioRecorder.record()
             } catch {
@@ -45,7 +45,7 @@ class RecordSoundsController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
-    @IBAction func stopRecording(sender: AnyObject) {
+    @IBAction func stopRecording(_ sender: AnyObject) {
         recording(false)
         audioRecorder.stop()
         let session = AVAudioSession.sharedInstance()
@@ -58,30 +58,26 @@ class RecordSoundsController: UIViewController, AVAudioRecorderDelegate {
     
     // MARK: Abstraction for common state changes for buttons
     
-    private func recording(enable: Bool) {
-        self.recordButton.enabled = !enable
-        self.stopRecordButton.enabled = enable
-        if enable {
-            recordingLabel.text = "Recording in progress"
-        } else {
-            recordingLabel.text = "Tap to record"
-        }
+    fileprivate func recording(_ enable: Bool) {
+        recordButton.isEnabled = !enable
+        stopRecordButton.isEnabled = enable
+        recordingLabel.text = enable ? "Recording in progress" : "Tap to record"
     }
     
     // MARK: Method called as soon as audio finished recording in device
     
-    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
-            self.performSegueWithIdentifier("audioSegue", sender: audioRecorder.url)
+            performSegue(withIdentifier: "audioSegue", sender: audioRecorder.url)
         } else {
             showAlert("Error saving audio")
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "audioSegue") {
-            let playSoundsVC = segue.destinationViewController as! PlaySoundsViewController
-            let recordedAudioURL = sender as! NSURL
+            let playSoundsVC = segue.destination as! PlaySoundsViewController
+            let recordedAudioURL = sender as! URL
             playSoundsVC.recordedAudioURL = recordedAudioURL
         }
     }

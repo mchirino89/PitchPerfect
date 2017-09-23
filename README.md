@@ -1,6 +1,15 @@
 # PitchPerfect
-Second project for Udacity nanodegree course
 
-iOS Developer Nanodegree's second assigment dony by me
+Records a conversation between you and a friend, and then makes your voices go through funny filters to sound like a Chipmunk or Darth Vader.
 
-PS: All buttons initial states are set via **Storyboard** so you will see less _.enable = true/false_ kind of instructions in _viewDidLoad/viewWillAppear_ methods.
+## Getting Started
+
+All that's required for this project to run is Xcode 8.3.3+
+
+## Contribute
+
+Feel free to fork the code, add some interesting new feature and make the proper pull request. I'll be more than happy to review it.
+
+## Credits
+
+iOS developer [Mauricio Chirino](https://www.linkedin.com/in/mauriciochirino/)
